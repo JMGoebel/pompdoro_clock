@@ -1,0 +1,35 @@
+<!DOCUMENT html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Clock</title>
+    <meta name="description" content="A pomadoro clock made with html, css, and javascript">
+    <meta name="author" content="Jason M. Goebel">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+    </header>
+    <div id="clockContainer">
+      <svg width='200' height='200' class='svgContainer'>
+        <circle r='100' cx='100' cy='100' id='clockFull'/>
+        <circle r='100' cx='100' cy='100' id='clockEmpty'/>
+      </svg>
+    </div>
+    <div id="innerCircle"></div>
+    <footer>
+      <div id="footerContent">
+        <p>This is a <a href='https://freecodecamp.com' target="_blank">freecodecamp.com</a> project created by
+          <a href='http://www.freecodecamp.com/jmgoebel' target="_blank">Jason Goebel.</a></p>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>

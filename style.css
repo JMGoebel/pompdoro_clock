@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+#clockContainer {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#innerCircle {
+  border-radius: 50%;
+  position: absolute;
+  background: #000;
+  width: 180px;
+  height: 180px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px 3px #000;
+}
+
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 0 20px #000;
+}
+
+#clockFull {
+  fill: none;
+  stroke: springgreen;
+  stroke-width: 20;
+  stroke-dasharray: 0 628;
+  transform: scale(1, -1) translate(0,-100%);
+  transition: stroke-dasharray 1s linear;
+}
+
+#clockEmpty {
+  fill: none;
+  stroke-width: 20;
+  stroke-dasharray: 0 628;
+  transition: stroke-dasharray 1s linear;
+}
