@@ -4,19 +4,38 @@
   font-size: 16px;
 }
 
+header {
+  box-shadow: 0 1px 2px 2px black;
+  position: absolute;
+  height: 50px;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+}
+
+#headerContent p {
+  color: cyan;
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
 #clockContainer {
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: #222;
 }
 
 #innerCircle {
   border-radius: 50%;
   position: absolute;
-  background: #000;
+  background: #111;
   width: 180px;
   height: 180px;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 5px 3px #000;
@@ -24,7 +43,7 @@
 
 svg {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   margin: 0 auto;
   transform: translate(-50%, -50%) rotate(-90deg);
@@ -35,7 +54,7 @@ svg {
 
 #clockFull {
   fill: none;
-  stroke: springgreen;
+  stroke: cyan;
   stroke-width: 20;
   stroke-dasharray: 0 628;
   transform: scale(1, -1) translate(0,-100%);
@@ -47,4 +66,47 @@ svg {
   stroke-width: 20;
   stroke-dasharray: 0 628;
   transition: stroke-dasharray 1s linear;
+}
+
+.timer {
+  font-family: 'sf_digital_readoutmedium';
+  color: cyan;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5em;
+}
+
+.timer:first-child {
+  opacity: .15;
+}
+
+footer {
+  box-shadow: -1px -1px 2px 2px black;
+  position: absolute;
+  height: 30px;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+}
+
+a {
+  font-size: 12px;
+  text-decoration: none;
+  color: darkcyan;
+}
+
+a:hover {
+  color: cyan;
+}
+
+#footerContent p{
+  color: black;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
 }

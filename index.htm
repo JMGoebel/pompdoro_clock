@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro Clock</title>
+    <title>WARNING SET CORS Pomodoro Clock</title>
     <meta name="description" content="A pomadoro clock made with html, css, and javascript">
     <meta name="author" content="Jason M. Goebel">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://jasongoebel.com/assests/fonts/sfDigitalReadout/stylesheet.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
 
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -15,14 +16,20 @@
   </head>
   <body>
     <header>
+      <div id="headerContent">
+        <p>Pomadoro Timer</p>
+      </div>
     </header>
     <div id="clockContainer">
-      <svg width='200' height='200' class='svgContainer'>
+      <svg width='200px' height='200px' class='svgContainer'>
         <circle r='100' cx='100' cy='100' id='clockFull'/>
         <circle r='100' cx='100' cy='100' id='clockEmpty'/>
       </svg>
     </div>
-    <div id="innerCircle"></div>
+    <div id="innerCircle">
+      <div class="timer">88:88</div>
+      <div class="timer" id="displayTimer"></div>
+    </div>
     <footer>
       <div id="footerContent">
         <p>This is a <a href='https://freecodecamp.com' target="_blank">freecodecamp.com</a> project created by
