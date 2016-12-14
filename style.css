@@ -39,6 +39,7 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 5px 3px #000;
+  cursor: pointer;
 }
 
 svg {
@@ -68,6 +69,25 @@ svg {
   transition: stroke-dasharray 1s linear;
 }
 
+#clockText {
+  position: absolute;
+  color: cyan;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10%;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+.unselectable {
+  /* had to add this to stop timer from being selected when using slide bar */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 .timer {
   font-family: 'sf_digital_readoutmedium';
   color: cyan;
@@ -76,10 +96,6 @@ svg {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5em;
-  /* had to add this to stop timer from being selected when using slide bar */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 .timer:first-child {

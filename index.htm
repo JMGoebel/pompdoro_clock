@@ -26,13 +26,17 @@
         <circle r='100' cx='100' cy='100' id='clockEmpty'/>
       </svg>
       <div id="innerCircle">
-        <div class="timer" unselectable="on">88:88</div>
-        <div class="timer" id="displayTimer" unselectable="on"></div>
+        <div class="timer unselectable" unselectable="on">88:88</div>
+        <div class="timer unselectable" id="displayTimer" unselectable="on"></div>
+        <div class="unselectable" id="clockText"></div>
       </div>
       <div id="slideBar">
         <div id="slider"></div>
       </div>
     </div>
+    <audio preload="metadata">
+      <source src="http://jasongoebel.com/assests/sound/sfx/Alarm_Clock_01.wav">
+    </audio>
     <footer>
       <div id="footerContent">
         <p>This is a <a href='https://freecodecamp.com' target="_blank">freecodecamp.com</a> project created by

@@ -6,11 +6,13 @@ var timerDisplay = document.getElementById('displayTimer');
 var slideBar = document.getElementById('slideBar');
 var slider = document.getElementById('slider');
 var innerCircle = document.getElementById('innerCircle');
+var clockText = document.getElementById('clockText');
 var startPos = 0;
 var sliderStartPosition = 0;
 var sliderCurPosition = 0;
 var timeRemaining;
 var timer;
+var state; // 0-setup, 1-running, 2-end
 
 function start () {
   var transitionEffect = 'stroke-dasharray ' + (time + 1) + 's linear'; // added 1 to offest
@@ -20,16 +22,6 @@ function start () {
   clockEmpty.style.transition = transitionEffect;
   clockEmpty.style.strokeDasharray = '628 628';
 
-  // When timer start lets hide the set timer scroll bar
-  slideBar.style.opacity = "0.3";
-  slideBar.addEventListener("transitionend", function(){
-    slider.removeEventListener('mousedown', startMove, false);
-  }, false);
-  slideBar.removeEventListener("transitionend", function(){}, false);
-
-  //slideBar.style.display = "none";
-
-  // Updates timer every second
   timer = setInterval(tickTock, 1000);
 }
 
@@ -57,13 +49,6 @@ function timeDisplay () {
 
   timerDisplay.textContent = min+":"+sec;
 }
-
-function pause () {
-  // store current time remaining
-  // clear interval
-  // start for setinterval and send in time remaning
-}
-
 
 // slider functionality
 function startMove () {
@@ -93,15 +78,32 @@ function moveSlider () {
   }
 }
 
+function actionButton () {
+  if(state === 0){
+    state = 1;
+    clockText.textContent = "Click to Reset";
+    start();
+    slider.removeEventListener('mousedown', startMove, false);
+    slideBar.style.opacity = "0.3";
+  } else if (state === 1){
+    init();
+    slideBar.style.opacity = "1";
+  }
+}
+
 
 // Initialize is called at load and on reseting the timer
 function init () {
+  state = 0;
   time = 60 * 20; // default to 20min
 
   // event listeners
   slider.addEventListener('mousedown', startMove, false);
   document.addEventListener('mouseup', stopMove, false);
+  innerCircle.addEventListener('click', actionButton, false);
 
+  // Prepping clock
+  innerCircle.style.backgroundColor = "black";
   clockFull.style.transition = "none";
   clockFull.style.strokeDasharray = '628 0';
   clockEmpty.style.transition = "none";
@@ -110,6 +112,7 @@ function init () {
   timeRemaining = time;
   clearInterval(timer);
   timeDisplay();
+  clockText.textContent = "Click to Start";
 
   //Set slider position on load
   sliderStartPosition = ((time/60) * 6) - 1 ;
@@ -121,8 +124,7 @@ clockFull.addEventListener("transitionend", function(){
   innerCircle.style.transition = "1s";
   innerCircle.style.backgroundColor = "darkred";
   slideBar.style.opacity = "1";
-
-  init();
+  clockText.textContent = "Click to Reset";
 }, false);
 
 init();
