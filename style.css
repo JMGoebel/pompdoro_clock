@@ -76,10 +76,37 @@ svg {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5em;
+  /* had to add this to stop timer from being selected when using slide bar */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .timer:first-child {
   opacity: .15;
+}
+
+#slideBar {
+  background-color: black;
+  border: 1px solid darkcyan;
+  width: 250px;
+  height: 16px;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+
+#slider {
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-color: cyan;
+  width: 15px;
+  height: 30px;
+  position: relative;
+  top: -7px;
+  left: 0%
 }
 
 footer {
