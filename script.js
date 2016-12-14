@@ -7,6 +7,7 @@ var slideBar = document.getElementById('slideBar');
 var slider = document.getElementById('slider');
 var innerCircle = document.getElementById('innerCircle');
 var clockText = document.getElementById('clockText');
+var alarm = document.getElementById('alarm');
 var startPos = 0;
 var sliderStartPosition = 0;
 var sliderCurPosition = 0;
@@ -117,6 +118,9 @@ function init () {
   //Set slider position on load
   sliderStartPosition = ((time/60) * 6) - 1 ;
   slider.style.left = sliderStartPosition;
+
+  alarm.pause();
+  alarm.currentTime = 0;
 }
 
 // Actions to take when time is up
@@ -125,6 +129,7 @@ clockFull.addEventListener("transitionend", function(){
   innerCircle.style.backgroundColor = "darkred";
   slideBar.style.opacity = "1";
   clockText.textContent = "Click to Reset";
+  alarm.play()
 }, false);
 
 init();
